@@ -197,7 +197,7 @@ public class ManualDiActivity extends AppCompatActivity {
     Kali kali = new Kali();
     Tambah tambah = new Tambah();
     Kurang kurang = new Kurang(); 
-    Sin sin = new Sin();											// --->>>> Cuma nambahin ini doang !!!! Di 101 Tempat
+    Sin sin = new Sin();// --->>>> Cuma nambahin ini doang !!!! Di 101 Tempat
 
     @BindView(R.id.textView)
     TextView textView;
@@ -210,10 +210,10 @@ public class ManualDiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dua);
         ButterKnife.bind(this);
 
-        kalkulator = new Kalkulator(bagi, kali, kurang, tambah, sin); // --->>>> Cuma nambahin ini doang !!!! Di 101 Tempat
-		...
-		..
-		.
+        kalkulator = new Kalkulator(bagi, kali, kurang, tambah, sin);// --->>>> Cuma nambahin ini doang !!!! Di 101 Tempat
+	...
+	..
+	.
     }
 
     ...
