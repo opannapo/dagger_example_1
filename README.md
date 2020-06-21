@@ -236,7 +236,7 @@ Okeh, sekarang masuk ke pembuktian bagaimana Dagger bisa sangat bermanfaat untuk
 Seperti yang sudah diterangkan diatas, Modul Kalkulator ini mendukung operasi Kali,Bagi,Tambah,Kurang dan Sin. Kita coba tambahkan juga untuk Cos dan Tan karna masih kerabat dekat dengan Sin.<br>
 Seharusnya dengan menambahkan operasi Cos & Tan pada modul Kalkulator ini tidak akan mengulangi point "Menciptakan Masalah" diatas kalau menggunakan Dagger.<br><br>
 
-Disini biar clear, semua activity yg lama semuanyg gue delete. Karna kita cuma mau buktikan apakah dagger berhasil membantu masalah dependency injection ini & membuat project terhindar dari banyak banget duplicate code.<br>
+Disini biar clear, semua activity yg lama gue delete. Karna kita cuma mau buktikan apakah dagger berhasil membantu masalah dependency injection ini & membuat project terhindar dari banyak banget duplicate code.<br>
 
 ## Skenario
 Skenario pembuktian : <br>
