@@ -419,18 +419,18 @@ public class Tan {
 <br>
 Okeh, telah terjadi perubahan di Constuctor Kalkulator. Ada penambahan Sin, Cos dan Tan di parameter.<br>
 Jika menggunakan manual DI seperti sebelumnya<br>
+
 ```
-  {
-  	kalkulator = new Kalkulator(bagi, kali, kurang, tambah);
-  }
-```
-Tentu kita perlu mengubah seluruh class yang menggunakan kalkulator menjadi
-```
-  {
-  	kalkulator = new Kalkulator(bagi, kali, kurang, tambah,sin,cos,tan);
-  }
+kalkulator = new Kalkulator(bagi, kali, kurang, tambah); 
 ```
 
+<br>Tentu kita perlu mengubah seluruh class yang menggunakan kalkulator menjadi<br>
+
+``` 
+kalkulator = new Kalkulator(bagi, kali, kurang, tambah,sin,cos,tan); 
+```
+<br>
+<br>
 Ini asli ngrepotin banget, bayangkan seperti kasus sebelunmnya gue harus refactor 101 Activity, ampun !!!<br>
 Supaya activity baru yang gue buat ini (untuk kalkulasi sin,cos & tan) bisa dikenali oleh Dagger dan perlu dibuatkan objectnya, maka activitynya harus ditambahkan diinterface di KalkulatorKomponen.<br>
 Kalau gak, nanti gak bisa disuntik. Ini interface soalnya...<br>
