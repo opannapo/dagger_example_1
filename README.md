@@ -240,8 +240,8 @@ Disini biar clear, semua activity yg lama gue delete. Karna kita cuma mau buktik
 
 ## Skenario
 Skenario pembuktian : <br>
-### Tahap 1 : Sementara Modul Kalkulator hanya berisi kalkulasi Tambah,Kali,Kurang,Bagi, dan hanya digunakan oleh 3 activity.<br>
-### Tahap 2 : Lalu ternyata setelah berjalan waktu kita butuh satu activity lagi untuk proses kalkulasi sin,cos & tan dengan menggunakan modul Kalkulator yang sudah ada, oleh karena itu kita perlu mengubah modul Kalkulator serta menbambah dependency untuk processing/kalkulasi Sin,Cos dan Tan. Seharusnya setelah terjadi perubahan pada modul Kalkulator, 3 activity sebelumnya yg sudah dibuat ditahap 1 tidak perlu mengalami perubahan apa-apa.<br>
+#### Tahap 1 : Sementara Modul Kalkulator hanya berisi kalkulasi Tambah,Kali,Kurang,Bagi, dan hanya digunakan oleh 3 activity.<br>
+#### Tahap 2 : Lalu ternyata setelah berjalan waktu kita butuh satu activity lagi untuk proses kalkulasi sin,cos & tan dengan menggunakan modul Kalkulator yang sudah ada, oleh karena itu kita perlu mengubah modul Kalkulator serta menbambah dependency untuk processing/kalkulasi Sin,Cos dan Tan. Seharusnya setelah terjadi perubahan pada modul Kalkulator, 3 activity sebelumnya yg sudah dibuat ditahap 1 tidak perlu mengalami perubahan apa-apa.<br>
 
 
 ## Implementasi Skenario 1<br>
@@ -420,15 +420,21 @@ public class Tan {
 Okeh, telah terjadi perubahan di Constuctor Kalkulator. Ada penambahan Sin, Cos dan Tan di parameter.<br>
 Jika menggunakan manual DI seperti sebelumnya<br>
 ```
-	kalkulator = new Kalkulator(bagi, kali, kurang, tambah);
+  {
+  	kalkulator = new Kalkulator(bagi, kali, kurang, tambah);
+  }
 ```
-Tentu kita perlu mengubah seluruh class yang menggunakan kalkulator menjadi<br>
+Tentu kita perlu mengubah seluruh class yang menggunakan kalkulator menjadi
 ```
-	kalkulator = new Kalkulator(bagi, kali, kurang, tambah,sin,cos,tan);
+  {
+  	kalkulator = new Kalkulator(bagi, kali, kurang, tambah,sin,cos,tan);
+  }
 ```
+
 Ini asli ngrepotin banget, bayangkan seperti kasus sebelunmnya gue harus refactor 101 Activity, ampun !!!<br>
 Supaya activity baru yang gue buat ini (untuk kalkulasi sin,cos & tan) bisa dikenali oleh Dagger dan perlu dibuatkan objectnya, maka activitynya harus ditambahkan diinterface di KalkulatorKomponen.<br>
 Kalau gak, nanti gak bisa disuntik. Ini interface soalnya...<br>
+
 ```
 @Component
 public interface KalkulatorComponent {
