@@ -17,8 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-public class DaggerActivity extends AppCompatActivity {
+public class DaggerKaliBagiActivity extends AppCompatActivity {
     @Inject
     Kalkulator kalkulator;
 
@@ -42,16 +41,6 @@ public class DaggerActivity extends AppCompatActivity {
                 Thread.sleep(2500);
                 runDependencyKali();
                 Thread.sleep(2500);
-                runDependencyKurang();
-                Thread.sleep(2500);
-                runDependencyTambah();
-                Thread.sleep(2500);
-                runDependencySin();
-                Thread.sleep(2500);
-                runDependencyCos();
-                Thread.sleep(2500);
-                runDependencyTan();
-                Thread.sleep(2500);
                 tampilkanText("Hahay, Selesai..." + PAGE);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -62,7 +51,7 @@ public class DaggerActivity extends AppCompatActivity {
 
     @OnClick(R.id.textView)
     public void lanjutKeYangLain(View view) {
-        startActivity(new Intent(this, DaggerKaliBagiActivity.class));
+        startActivity(new Intent(this, DaggerTambahKurangActivity.class));
     }
 
     private void runDependencyBagi() {
@@ -73,31 +62,6 @@ public class DaggerActivity extends AppCompatActivity {
     private void runDependencyKali() {
         final double hasil = kalkulator.getKali().hitung(10, 2);
         tampilkanText("10 x 2 = " + hasil);
-    }
-
-    private void runDependencyKurang() {
-        final double hasil = kalkulator.getKurang().hitung(10, 2);
-        tampilkanText("10 - 2 = " + hasil);
-    }
-
-    private void runDependencyTambah() {
-        double hasil = kalkulator.getTambah().hitung(10, 2);
-        tampilkanText("10 + 2 = " + hasil);
-    }
-
-    private void runDependencySin() {
-        double hasil = kalkulator.getSin().hitung(10);
-        tampilkanText("sin 10 = " + hasil);
-    }
-
-    private void runDependencyCos() {
-        double hasil = kalkulator.getCos().hitung(10);
-        tampilkanText("cos 10 = " + hasil);
-    }
-
-    private void runDependencyTan() {
-        double hasil = kalkulator.getTan().hitung(10);
-        tampilkanText("Tan 10 = " + hasil);
     }
 
     private void tampilkanText(final String hasil) {

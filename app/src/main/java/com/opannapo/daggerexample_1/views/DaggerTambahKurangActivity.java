@@ -17,8 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-public class DaggerActivity extends AppCompatActivity {
+public class DaggerTambahKurangActivity extends AppCompatActivity {
     @Inject
     Kalkulator kalkulator;
 
@@ -38,19 +37,9 @@ public class DaggerActivity extends AppCompatActivity {
             try {
                 tampilkanText("Ok, wait..." + PAGE);
                 Thread.sleep(2500);
-                runDependencyBagi();
-                Thread.sleep(2500);
-                runDependencyKali();
-                Thread.sleep(2500);
                 runDependencyKurang();
                 Thread.sleep(2500);
                 runDependencyTambah();
-                Thread.sleep(2500);
-                runDependencySin();
-                Thread.sleep(2500);
-                runDependencyCos();
-                Thread.sleep(2500);
-                runDependencyTan();
                 Thread.sleep(2500);
                 tampilkanText("Hahay, Selesai..." + PAGE);
             } catch (InterruptedException e) {
@@ -62,7 +51,7 @@ public class DaggerActivity extends AppCompatActivity {
 
     @OnClick(R.id.textView)
     public void lanjutKeYangLain(View view) {
-        startActivity(new Intent(this, DaggerKaliBagiActivity.class));
+        startActivity(new Intent(this, DaggerSinCosTanActivity.class));
     }
 
     private void runDependencyBagi() {

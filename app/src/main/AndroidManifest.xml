@@ -17,5 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.opannapo.daggerexample_1.views.ManualDiActivity" />
+        <activity android:name="com.opannapo.daggerexample_1.views.DaggerSinCosTanActivity" />
+        <activity android:name="com.opannapo.daggerexample_1.views.DaggerTambahKurangActivity" />
+        <activity android:name="com.opannapo.daggerexample_1.views.DaggerKaliBagiActivity" />
     </application>
 </manifest>

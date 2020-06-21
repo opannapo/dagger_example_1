@@ -17,8 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-public class DaggerActivity extends AppCompatActivity {
+public class DaggerSinCosTanActivity extends AppCompatActivity {
     @Inject
     Kalkulator kalkulator;
 
@@ -38,14 +37,6 @@ public class DaggerActivity extends AppCompatActivity {
             try {
                 tampilkanText("Ok, wait..." + PAGE);
                 Thread.sleep(2500);
-                runDependencyBagi();
-                Thread.sleep(2500);
-                runDependencyKali();
-                Thread.sleep(2500);
-                runDependencyKurang();
-                Thread.sleep(2500);
-                runDependencyTambah();
-                Thread.sleep(2500);
                 runDependencySin();
                 Thread.sleep(2500);
                 runDependencyCos();
@@ -62,27 +53,7 @@ public class DaggerActivity extends AppCompatActivity {
 
     @OnClick(R.id.textView)
     public void lanjutKeYangLain(View view) {
-        startActivity(new Intent(this, DaggerKaliBagiActivity.class));
-    }
-
-    private void runDependencyBagi() {
-        final double hasil = kalkulator.getBagi().hitung(10, 2);
-        tampilkanText("10 : 2 = " + hasil);
-    }
-
-    private void runDependencyKali() {
-        final double hasil = kalkulator.getKali().hitung(10, 2);
-        tampilkanText("10 x 2 = " + hasil);
-    }
-
-    private void runDependencyKurang() {
-        final double hasil = kalkulator.getKurang().hitung(10, 2);
-        tampilkanText("10 - 2 = " + hasil);
-    }
-
-    private void runDependencyTambah() {
-        double hasil = kalkulator.getTambah().hitung(10, 2);
-        tampilkanText("10 + 2 = " + hasil);
+        startActivity(new Intent(this, ManualDiActivity.class));
     }
 
     private void runDependencySin() {
