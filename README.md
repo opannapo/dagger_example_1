@@ -137,14 +137,14 @@ public class ManualDiActivity extends AppCompatActivity {
 
 Tidak ada yang salah dengan implementasi seperti itu, tapi gue ngotot pokoknya implementasi ini harus bermasalah diakhir jaman setelah project mulai gendut dan mengalami perubahan kebutuhan.<br>
 
-## Simulasi Menciptakan Ketergantungan Pada Satu Obehct Di Banyak Tempat
+## Simulasi Menciptakan Ketergantungan Pada Satu Object Di Banyak Tempat
 Oke, akhirnya gue kepikiran bagaimana caranya agar aplikasi ini menjadi gendut dan butuh Modul Kalkulator dibanyak tempat.<br>
 Akhirnya gue kepikiran buat duplicate ManualDiActivity sebanyak 100 class (Gue generate sendiri pake script. Bikin aja gak susah, tinggal write & replace, trus modify juga Manifestnya).<br>
 Dan setelah menunggu Activity tadi diduplicate selama 0.0001 ms ... Jreng-jreng-jreng akhirnya sekarang gue punya 101 Acrivity, dimulai dari ManualDiActivity,ManualDiActivity1,ManualDiActivity2 sampai ManualDiActivity100.<br>
 Mantap, sekarang aplikasi gue sudah gendut dan semuanya menggunakan modul Kalkulator yang objectnya diinitial dengan cara<br>
 ```
 	...
-	kalkulator = new Kalkulator(bagi, kali, kurang, tambah, sin, cos, tan);
+	kalkulator = new Kalkulator(bagi, kali, kurang, tambah);
 	...
 ```
 
